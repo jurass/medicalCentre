@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="dataSourceStorage">
+  <data-source source="LOCAL" name="Rails medicalCentre: development" uuid="06882ae3-b534-4418-b701-d8d3a87c9b46">
+    <database-info product="PostgreSQL" version="9.3.5" jdbc-version="4.0" driver-name="PostgreSQL Native Driver" driver-version="PostgreSQL 9.4 JDBC4 (build 1201)">
+      <identifier-quote-string>&quot;</identifier-quote-string>
+    </database-info>
+    <case-sensitivity plain-identifiers="lower" quoted-identifiers="exact"/>
+  </data-source>
+  <data-source source="LOCAL" name="Rails medicalCentre: test" uuid="14810674-2dbe-4969-89f3-335260216f33">
+    <database-info product="PostgreSQL" version="9.3.5" jdbc-version="4.0" driver-name="PostgreSQL Native Driver" driver-version="PostgreSQL 9.4 JDBC4 (build 1201)">
+      <identifier-quote-string>&quot;</identifier-quote-string>
+    </database-info>
+    <case-sensitivity plain-identifiers="lower" quoted-identifiers="exact"/>
+  </data-source>
+  <data-source source="LOCAL" name="Rails medicalCentre: production" uuid="28175454-c7ca-4e58-a501-2307b0333e09">
+    <database-info product="PostgreSQL" version="9.3.5" jdbc-version="4.0" driver-name="PostgreSQL Native Driver" driver-version="PostgreSQL 9.4 JDBC4 (build 1201)">
+      <identifier-quote-string>&quot;</identifier-quote-string>
+    </database-info>
+    <case-sensitivity plain-identifiers="lower" quoted-identifiers="exact"/>
+  </data-source>
+</component>

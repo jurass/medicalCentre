@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DataSourceManagerImpl" format="xml" hash="4160037681">
+    <data-source source="LOCAL" name="Rails medicalCentre: development" uuid="06882ae3-b534-4418-b701-d8d3a87c9b46">
+      <driver-ref>postgresql</driver-ref>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql:medicalCentre_development</jdbc-url>
+      <user-name>medicalCentre</user-name>
+      <user-password>dfc7dfc5dfc4df9b</user-password>
+      <libraries />
+    </data-source>
+    <data-source source="LOCAL" name="Rails medicalCentre: test" uuid="14810674-2dbe-4969-89f3-335260216f33">
+      <driver-ref>postgresql</driver-ref>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql:medicalCentre_test</jdbc-url>
+      <user-name>medicalCentre</user-name>
+      <user-password>dfc7dfc5dfc4df9b</user-password>
+      <libraries />
+    </data-source>
+    <data-source source="LOCAL" name="Rails medicalCentre: production" uuid="28175454-c7ca-4e58-a501-2307b0333e09">
+      <driver-ref>postgresql</driver-ref>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql:medicalCentre_production</jdbc-url>
+      <user-name>medicalCentre</user-name>
+      <user-password>dfc7dfc5dfc4df9b</user-password>
+      <libraries />
+    </data-source>
+  </component>
+</project>
+
