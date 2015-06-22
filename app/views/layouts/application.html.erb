@@ -8,6 +8,56 @@
 </head>
 <body>
 
+<div class="Main_Header">
+  <% if current_user %>
+      <ul class="nav">
+      <%= link_to "Sign Out", signed_out_path %>
+      </ul>
+      <% if current_user.is_admin%>
+          <ul class="name" >
+          You are in admin mode
+          </ul>
+          <ul class="nav">
+          <%= link_to "Users", admin_users_path %>
+          <%=link_to "Accept users", user_approval_path %>
+          <%= link_to "Outpatient clinics", admin_outpatient_clinic_path %>
+            <%= link_to "Appointments", appointments_path %>
+</ul>
+<% else %>
+          <ul class="name">
+  Logged in as <%= current_user.login %>
+</ul>
+
+          <% if current_user.is_doctor %>
+              <ul class="nav">
+              <%= link_to "Edit schedule", new_schedule_path %>
+                <%= link_to "Appointments", doctors_appointments_path %>
+                <%= link_to "Schedules", schedules_path %>
+              </ul>
+              <%else%>
+              <ul class="nav">
+              <%= link_to "Account Settings", account_settings_path %>
+              <%= link_to "Appointments", available_appointments_path %>
+                <%= link_to "My appointments", patient_appointments_path %>
+              </ul>
+
+              <%end%>
+</ul>
+      <%end%>
+
+
+  <% else %>
+      <ul class="nav">
+  <%= link_to "Sign up", new_user_path %> or
+      <%= link_to "Sign In", sign_in_path %>
+       </ul>
+<%end%>
+     </div>
+
+<% flash.each do |name, msg| %>
+<%= content_tag :div, msg, :id => "flash_#{name}" %>
+    <%end%>
+
 <%= yield %>
 
 </body>

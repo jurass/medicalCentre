@@ -1,0 +1,17 @@
+<div class="Sign_Form">
+  <p>Admin Users</p>
+  <table>
+    <tr>
+      <th width="30%">Username</th>
+    </tr>
+    <% for doctor in @doctors %>
+        <tr>
+          <td><%= doctor.login %></td>
+          <td><%= doctor.first_name %></td>
+          <td><%= doctor.last_name %></td>
+         <td><%= link_to 'Add', clinic_doctor_path(user: doctor, outpatient_clinic: @outpatient_clinic), :method => :put%>
+         </td>
+        </tr>
+    <% end %>
+  </table>
+</div>

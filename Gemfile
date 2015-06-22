@@ -1,12 +1,15 @@
 source 'https://rubygems.org'
 
-gem 'rails', '3.2.18'
 
+gem 'rails', '3.2.18'
+#:git => 'git://github.com/rails/rails.git',  '3.2.18'.
+#gem 'rails', :git => 'git://github.com/rails/rails.git', :tag => 'v4.1.0.beta1'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'pg'
 
+gem 'active_enum', :git => 'git://github.com/adzap/active_enum.git'
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -21,6 +24,10 @@ group :assets do
 end
 
 gem 'jquery-rails'
+
+gem 'bcrypt-ruby', :require=>'bcrypt'
+
+
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

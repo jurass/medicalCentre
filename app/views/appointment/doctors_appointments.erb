@@ -1,0 +1,18 @@
+<div class="Sign_Form">
+  <p>Appointments</p>
+  <table>
+    <tr>
+      <th width="30%">Appointment</th>
+    </tr>
+    <% for appointment in @doctors_appointments %>
+        <tr>
+          <td><%= appointment.app_date %></td>
+          <td><%= appointment.outpatient_clinic.name %></td>
+          <td><%= appointment.doctor.last_name %></td>
+          <% if appointment.patient != nil %>
+          <td><%= appointment.patient.last_name %></td>
+              <%end%>
+        </tr>
+    <% end %>
+  </table>
+</div>

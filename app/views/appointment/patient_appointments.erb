@@ -1,0 +1,23 @@
+<div class="Sign_Form">
+  <p>Appointments</p>
+  <table>
+    <tr>
+      <th width="30%">Appointment</th>
+    </tr>
+    <% for app in @patient_appointments%>
+        <tr>
+          <td><%= app.app_date %></td>
+          <td><%= app.outpatient_clinic.name %></td>
+          <td><%= app.doctor.last_name %></td>
+
+        <% if !app.approved %>
+              <td>
+            <%= link_to 'Confirm', app_path(appointment: app) %>
+          </td>
+              <%else %>
+                <td> CONFIRMED</td>
+          <%end%>
+        </tr>
+    <% end %>
+  </table>
+</div>

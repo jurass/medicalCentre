@@ -1,0 +1,49 @@
+<div class="Sign_Form">
+  <%= form_tag available_appointments_path, :method => 'get' do %>
+      <p>
+        <!--%= text_field_tag :search, params[:search] %-->
+        <%= select_tag :search, options_from_collection_for_select(OutpatientClinic.all, :id, :name, {prompt: "Select an outpatient clinic"})%>
+
+        <%= submit_tag "Search", :name => nil %>
+
+      </p>
+
+  <%end%>
+  <p>Appointments</p>
+  <table>
+    <tr>
+      <th width="30%">Appointment</th>
+    </tr>
+<%for day in @days%>
+        <tr><th><%=day%></th></tr>
+    <% for app in @available_appointments %>
+
+            <% if day == app.app_date.strftime("%d %b. %Y")%>
+        <!--% app_prev = app %>
+        <!--% if app.app_date.strftime("%d %b. %Y") != app_prev.app_date.strftime("%d %b. %Y") %-->
+
+             <tr>
+          <td><%= app.app_date %></td>
+          <td><%= app.outpatient_clinic.name %></td>
+
+          <% if app.doctor != nil %>
+              <td><%= app.doctor.last_name %></td>
+          <%end%>
+
+          <td>
+            <%= link_to 'Join', makeapp_path(appointment: app) %>
+
+          </td>
+
+        </tr>
+                <%else%>
+             <!--   %break%>
+            <tr><td>brak</td></tr>
+-->
+                <%end%>
+
+<%end%>
+
+    <% end %>
+  </table>
+</div>

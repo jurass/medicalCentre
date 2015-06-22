@@ -1,0 +1,27 @@
+<div class="Sign_Form">
+<h1> New schedule</h1>
+<%= form_for @schedule_element, :as => :schedule_element, :url => new_schedule_path, :method => :put do |f| %>
+<p>
+<p>
+  <%= f.collection_select :outpatient_clinic, @outpatient_clinics, :id, :name, {prompt: "Select an outpatient clinic"} %>
+</p>
+  <!--todo: COLUMNS -->
+
+<p>
+      <%= f.collection_select :day, ScheduleElement::DAYS, :to_s, :to_s, {prompt: "Select the day"}   %>
+  </p>
+    <%= f.label 'hour from: ' %> <%= f.label 'hour to: ' %><br/>
+      <%= f.time_select :hour_from %>
+      <%= show_field_error(@schedule_element, :hour_from) %>
+      <%= f.time_select :hour_to %>
+      <%= show_field_error(@schedule_element, :hour_to) %>
+
+
+
+</p>
+    <p>
+      <%= f.submit 'Add schedule' %>&nbsp;
+    </p>
+
+<%end%>
+    </div>

@@ -1,0 +1,21 @@
+<div class="Sign_Form">
+<p>Admin Users</p>
+<table>
+  <tr>
+    <th width="30%">Username</th>
+  </tr>
+  <% for user in @users %>
+      <tr>
+        <td><%= user.login %></td>
+        <td><%= user.first_name %></td>
+        <td><%= user.last_name %></td>
+        <td><%= link_to 'Delete', user, :confirm => 'Are you sure?', :method => :delete %></td>
+
+      <% if user.is_doctor %>
+          <td><%= link_to 'Edit', user, :method => :match %></td>
+      <%end%>
+      </tr>
+  <% end %>
+  <tr><td><%= button_to 'Add doctor', :action => "new_doctor" %></td></tr>
+</table>
+    </div>

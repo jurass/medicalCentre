@@ -11,3 +11,79 @@
  *= require_self
  *= require_tree .
  */
+
+body{
+    background-color: #C4C1BD;
+}
+
+.Main_Header{
+    background-image: url('header_bg.png');
+    height:60px;
+    padding:0 20px;
+    border-radius: 18px;
+    box-shadow: 5px 5px 5px #888888;
+
+}
+
+.Sign_Form{
+    text-align: center;
+    margin:auto;
+    margin-top:10px;
+    width:500px;
+    background-color: rgba(0, 0, 0, .2);
+    padding-bottom:20px;
+    padding-top:2px;
+    border-radius: 18px;
+    box-shadow: 5px 5px 5px #888888;
+
+}
+
+.nav{
+    list-style-type: none;
+    float: right;
+    color:#C4C1BD;
+
+}
+.nav li{
+    display: inline;
+    margin-right:5px;
+
+}
+
+.name{
+    list-style-type: none;
+    float: left;
+    color:#C4C1BD;
+}
+.nav_links{
+    color: #C4C1BD;
+    text-decoration: none;
+}
+
+
+
+#flash_error {
+    text-align:center;
+    width: 400px;
+    margin:auto;
+    margin-top:20px;
+    border: 1px solid red;
+    padding: 4px;
+    margin-bottom: 10px;
+    background-color: #FFCCCC;
+}
+
+#flash_notice {
+    text-align:center;
+    width: 400px;
+    margin:auto;
+    margin-top:20px;
+    border: 1px solid green;
+    padding: 4px;
+    margin-bottom: 10px;
+    background-color: #CCFFCC;
+}
+.error_message {
+    color:#FFCCCC;
+
+}

@@ -1,0 +1,45 @@
+<div class="Sign_Form">
+<p>Admin Outpatient clinic</p>
+<table>
+  <tr>
+    <th width="30%">Outpatient Clinic</th>
+  </tr>
+
+
+
+  <%= form_for @outpatient_clinic, :as => :outpatient_clinic, :url => new_outpatient_clinic_path, :method => :put do |f| %>
+
+
+      <p>
+        <%= f.label 'name:' %><br/>
+        <%= f.text_field :name %>
+        <!-- todo: cos tu sie wysypuje -->
+       <!--%= show_field_error(@outpatient_clinic, :name) %-->
+      </p>
+      <p>
+        <%= f.submit 'Add outpatient clinic' %>&nbsp;
+      </p>
+  <%end%>
+
+  <% for outpatient_clinic in @outpatient_clinics %>
+      <tr>
+        <td><%= outpatient_clinic.name %></td>
+        <td><%= link_to 'Add doctor', clinic_doctor_path(outpatient_clinic: outpatient_clinic), :method => :match %> </td>
+        <td><%= link_to 'Delete', outpatient_clinic, :confirm => 'Are you sure?', :method => :delete %></td>
+
+         <% for schedule in Schedule.find_all_by_outpatient_clinic_id(outpatient_clinic.id) %>
+          <tr>
+            <td>
+              <% if schedule.doctor != nil %>
+              <%= schedule.doctor.login %>
+                  <%end%>
+            </td>
+          </tr>
+         <%end%>
+
+
+
+      </tr>
+  <% end %>
+</table>
+    </div>

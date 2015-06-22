@@ -1,0 +1,42 @@
+<div class = "Sign_Form">
+<h1>Add doctor</h1>
+  <%= form_for @user, :as => :user, :url => add_doctor_path, :method => :put do |f| %>
+      <p>
+        <%= f.label 'login:' %><br/>
+        <%= f.text_field :login %>
+        <%= show_field_error(@user,:login)%>
+      </p>
+      <p>
+        <%= f.label 'first name:' %><br/>
+        <%= f.text_field :first_name %>
+        <%= show_field_error(@user,:first_name)%>
+      </p>
+      <p>
+        <%= f.label 'last name:' %><br/>
+        <%= f.text_field :last_name %>
+        <%= show_field_error(@user,:last_name)%>
+      </p>
+      <p>
+        <%= f.label 'pwz:' %><br/>
+        <%= f.text_field :pesel_pwz %>
+        <%= show_field_error(@user,:pesel_pwz)%>
+      </p>
+      <p>
+        <%= f.label 'password:' %><br/>
+        <%= f.password_field :password %>
+        <%= show_field_error(@user,:password)%>
+
+      </p>
+      <p>
+        <%= f.label 'password confirmation:' %><br/>
+        <%= f.password_field :password_confirmation %>
+        <%= show_field_error(@user,:password_confirmation)%>
+      </p>
+
+      <p>
+        <%=f.submit 'Add doctor' %> &nbsp;
+        <%= f.submit 'Clear Form', :type => 'reset' %>
+      </p>
+  <%end%>
+
+</div>

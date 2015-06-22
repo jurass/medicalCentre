@@ -1,0 +1,21 @@
+<div class="Sign_Form">
+  <p>Schedules</p>
+  <table>
+    <tr>
+      <th width="30%">Schedule</th>
+    </tr>
+    <% for schedule in @schedules %>
+        <tr>
+          <td><%= schedule.doctor.last_name %></td>
+          <td><%= schedule.outpatient_clinic.name %></td>
+          <tr>
+            <% for schedule_element in ScheduleElement.find_all_by_schedule_id(schedule.id) %>
+              <td><%= schedule_element.day %></td>
+              <td><%= schedule_element.hour_from.strftime("%I:%M%p") %></td>
+              <td><%= schedule_element.hour_to.strftime("%I:%M%p") %></td>
+            <%end%>
+          </tr>
+        </tr>
+    <% end %>
+  </table>
+</div>

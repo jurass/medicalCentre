@@ -1,0 +1,16 @@
+<div class="Sign_Form">
+  <p>Appointments</p>
+  <table>
+    <tr>
+      <th width="30%">Appointment</th>
+    </tr>
+    <% for appointment in @appointments %>
+        <tr>
+          <td><%= appointment.app_date %></td>
+          <td><%= appointment.outpatient_clinic.name %></td>
+          <td><%= appointment.doctor.last_name %></td>
+         <td><%= link_to 'Delete', appointment,:confirm => 'Are you sure?', :method => :delete %></td>
+        </tr>
+    <% end %>
+  </table>
+</div>

@@ -1,0 +1,46 @@
+<div class="Sign_Form">
+  <p>Edit doctor</p>
+  <%= form_for @user, :as => :user, :url => user_path, :method => :put do |f| %>
+      <p>
+        <%= f.label 'login:' %><br/>
+        <%= f.text_field :login %>
+        <%= show_field_error(@user,:login)%>
+      </p>
+      <p>
+        <%= f.label 'first name:' %><br/>
+        <%= f.text_field :first_name %>
+        <%= show_field_error(@user,:first_name)%>
+      </p>
+      <p>
+        <%= f.label 'last name:' %><br/>
+        <%= f.text_field :last_name %>
+        <%= show_field_error(@user,:last_name)%>
+      </p>
+      <p>
+        <%= f.label 'address:' %><br/>
+        <%= f.text_field :address %>
+        <%= show_field_error(@user,:address)%>
+      </p>
+      <p>
+        <%= f.label 'pwz:' %><br/>
+        <%= f.text_field :pesel_pwz %>
+        <%= show_field_error(@user,:pesel_pwz)%>
+      </p>
+
+      <p>
+        <%= f.label 'new password: (leave blank if you are not changing your password' %><br/>
+        <%= f.password_field :new_password %>
+        <%= show_field_error(@user,:new_password)%>
+      </p>
+      <p>
+        <%= f.label 'password confirmation:' %><br/>
+        <%= f.password_field :new_password_confirmation %>
+        <%= show_field_error(@user,:new_password_confirmation)%>
+      </p>
+
+
+      <p>
+        <%=f.submit 'Update' %>
+      </p>
+  <%end%>
+</div>
