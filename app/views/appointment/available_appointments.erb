@@ -1,9 +1,15 @@
 <div class="Sign_Form">
   <%= form_tag available_appointments_path, :method => 'get' do %>
       <p>
-        <!--%= text_field_tag :search, params[:search] %-->
-        <%= select_tag :search, options_from_collection_for_select(OutpatientClinic.all, :id, :name, {prompt: "Select an outpatient clinic"})%>
+        <%= check_box :first_available, "first" %>
+        Outpatient clinic: <%= select_tag :search, options_from_collection_for_select(OutpatientClinic.all, :id, :name, {prompt: "Select an outpatient clinic"})%>
 
+        <%= submit_tag "Search", :name => nil %>
+
+      </p>
+
+      <p>
+        Doctor:  <%= select_tag :search2, options_from_collection_for_select(User.find_all_by_is_doctor(true), :id, :login, {prompt: "Select a doctor"})%>
         <%= submit_tag "Search", :name => nil %>
 
       </p>
@@ -14,35 +20,35 @@
     <tr>
       <th width="30%">Appointment</th>
     </tr>
+    <% if @user!=nil %>
+    <tr>
+          <%= OutpatientClinic.find_by_id(params[:search]).name %>
+          </tr>
+          <tr>
+            <%= User.find_by_id(params[:search2]).first_name  %>
+            <%= User.find_by_id(params[:search2]).last_name  %>
+          </tr>
+    <%end%>
+
+
 <%for day in @days%>
         <tr><th><%=day%></th></tr>
     <% for app in @available_appointments %>
-
             <% if day == app.app_date.strftime("%d %b. %Y")%>
-        <!--% app_prev = app %>
-        <!--% if app.app_date.strftime("%d %b. %Y") != app_prev.app_date.strftime("%d %b. %Y") %-->
-
              <tr>
           <td><%= app.app_date %></td>
           <td><%= app.outpatient_clinic.name %></td>
-
           <% if app.doctor != nil %>
               <td><%= app.doctor.last_name %></td>
           <%end%>
-
           <td>
             <%= link_to 'Join', makeapp_path(appointment: app) %>
-
           </td>
-
         </tr>
                 <%else%>
-             <!--   %break%>
-            <tr><td>brak</td></tr>
--->
-                <%end%>
+                     <%end%>
 
-<%end%>
+            <% end %>
 
     <% end %>
   </table>

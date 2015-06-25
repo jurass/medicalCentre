@@ -30,7 +30,6 @@
 
           <% if current_user.is_doctor %>
               <ul class="nav">
-              <%= link_to "Edit schedule", new_schedule_path %>
                 <%= link_to "Appointments", doctors_appointments_path %>
                 <%= link_to "Schedules", schedules_path %>
               </ul>

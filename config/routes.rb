@@ -117,7 +117,10 @@ get "doctors_appointments" => "appointment#doctors_appointments"
 
   ##=====================SCHEDULE
   get "new_schedule" => "appointment#new_schedule"
+  post "new_schedule" => "appointment#new_schedule"
   put "new_schedule" => "appointment#add_schedule_element_to_schedule"
+
+  delete "schedule_element/:id" => "appointment#delete_schedule_element", :as => "schedule_element"
 
   get "admin_outpatient_clinic" => "admin#outpatient_clinics"
   delete "outpatient_clinic/:id" => "admin#delete_outpatient_clinic", :as => "outpatient_clinic"

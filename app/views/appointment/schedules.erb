@@ -8,14 +8,18 @@
         <tr>
           <td><%= schedule.doctor.last_name %></td>
           <td><%= schedule.outpatient_clinic.name %></td>
-          <tr>
+
+
             <% for schedule_element in ScheduleElement.find_all_by_schedule_id(schedule.id) %>
+                <tr>
               <td><%= schedule_element.day %></td>
               <td><%= schedule_element.hour_from.strftime("%I:%M%p") %></td>
               <td><%= schedule_element.hour_to.strftime("%I:%M%p") %></td>
+              <td><%= link_to 'Delete', schedule_element, :confirm => 'Are you sure?', :method => :delete %></td>
+                </tr>
             <%end%>
-          </tr>
         </tr>
     <% end %>
+    <td><%= button_to 'Add schedule', new_schedule_path %></td>
   </table>
 </div>
